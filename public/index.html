@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang='en'>
+  <head>
+    <title>Stylistic and logic modularity in modern web apps</title>
+    <meta charset='utf-8'>
+    <meta content='yes' name='apple-mobile-web-app-capable'>
+    <meta content='black' name='apple-mobile-web-app-status-bar-style'>
+    <link href='/stylesheets/the-loaded-javascript.css' rel='stylesheet'>
+    <link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro' rel='stylesheet'>
+    <script src='/javascript/modernizr.custom.js'></script>
+  </head>
+  <body>
+    <div class="slide">
+      <h1>
+        Stylistic
+        <span class='amp'>&</span>
+        logic modularity
+      </h1>
+      <p>
+        in modern web apps
+      </p>
+    </div>
+    <div class="slide">
+      <p>
+        ‟Complete separation between parts of the UI, looks and functionality-wise.
+        And each still works on it's own.”
+      </p>
+      <p>
+        — Me
+      </p>
+    </div>
+    <div class="slide">
+      <h1>
+        Why?
+      </h1>
+      <p>
+        Easy to test. Easy to fix. Easy to maintain.
+      </p>
+    </div>
+    <div class='slide'>
+      <h1>
+        How? (styles)
+      </h1>
+      <p>
+        Use a preprocessor. If for no other reason, for this.
+      </p>
+      <p>
+        Minimal set of superclasses with common properties.
+      </p>
+      <p>
+        Each CSS/SASS/Stylus file responsible for a UI module.
+      </p>
+      <p>
+        Cascade as little as you can.
+      </p>
+    </div>
+    <div class='slide'>
+      <h1>
+        How? (logic)
+      </h1>
+      <p>
+        Implied, but write SMALL modules.
+      </p>
+      <p>
+        Tie modules together with a common event bus.
+      </p>
+      <p>
+        Modules use it to broadcast messages interested modules listen to.
+      </p>
+    </div>
+    <div class='slide'>
+      <h1>
+        Ask yourself these:
+      </h1>
+      <p>
+        How easy it is to test my components separately?
+      </p>
+      <p>
+        Do my components error out when ran separately?
+      </p>
+      <p>
+        Do my components look right when rendered individually?
+      </p>
+    </div>
+    <div class='slide'>
+      <p>
+        Refactor until you get the right answers to all 3.
+      </p>
+    </div>
+    <div class='slide'>
+      <h1>
+        Thanks!
+      </h1>
+      <p>
+        My soapbox is at
+        <a href="https://twitter.com/julio_ody">@julio_ody</a>.
+      </p>
+      <p>
+        You could probably hire me.
+      </p>
+    </div>
+    <script src='/javascript/jquery-1.9.0.min.js'></script>
+    <script src='/javascript/deck.core.js'></script>
+    <script src='/javascript/deck.hash.js'></script>
+    <script>
+    (function() {
+      $(document).ready(function() {
+        $.deck('.slide');
+      });
+    })();
+    </script>
+  </body>
+</html>
