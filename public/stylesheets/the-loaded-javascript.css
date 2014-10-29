@@ -359,63 +359,68 @@ you can use the generic selector below, but it's slower:
 *::selection {
   background: rgba(0, 0, 0, 0.3); }
 
+* {
+  margin: 0;
+  padding: 0;
+  outline: none; }
+
 html,
 body {
   overflow: hidden; }
 
 body {
-  -webkit-perspective: 800px;
-  perspective: 800px;
-  font-family: "Source Sans Pro", sans-serif;
+  font-family: 'Open Sans', sans-serif;
   font-weight: 400;
-  background: #1b1b1b;
-  background-image: -webkit-radial-gradient(25% 0%, ellipse, rgba(255, 255, 255, 0.25) 0%, rgba(255, 255, 255, 0.1) 50%, transparent);
-  background-image: radial-gradient(25% 0%, ellipse, rgba(255, 255, 255, 0.25) 0%, rgba(255, 255, 255, 0.1) 50%, transparent);
-  color: #bebdb8; }
-
-h1,
-h2,
-em {
-  font-weight: 700; }
-
-h1 {
-  font-size: 4.6rem;
-  line-height: 1.6; }
-
-h2 {
-  font-size: 2.6rem;
-  line-height: 1.6;
-  border-bottom: 0; }
-
-p,
-li {
-  line-height: 1.6;
-  font-size: 2.3rem;
-  margin-bottom: 0;
-  margin-top: 2rem; }
-
-aside {
-  font-size: 1.3rem; }
-
-code {
-  font-size: 1.5rem; }
-
-em {
-  font-style: normal;
-  border-bottom: 5px solid #bebdb8; }
-
-a {
-  color: #bebdb8;
-  text-decoration: none;
-  cursor: pointer;
-  border-bottom: 3px solid #bebdb8; }
+  background: #f5f5f5; }
 
 .slide {
+  -webkit-transform: translate3d(-50%, -50%, 0);
+  transform: translate3d(-50%, -50%, 0);
   -webkit-transition: opacity 150ms linear;
   transition: opacity 150ms linear;
-  opacity: 0; }
+  position: absolute;
+  opacity: 0;
+  top: 50%;
+  left: 50%;
+  min-height: 0;
+  min-width: 90%;
+  text-align: center; }
   .slide.deck-current {
     opacity: 1; }
+  .slide h1,
+  .slide h2,
+  .slide em {
+    font-weight: 700;
+    color: #3f3f3f; }
+  .slide em {
+    font-style: normal; }
+  .slide h1 {
+    font-size: 7vmax;
+    line-height: 7vmax; }
+  .slide h2 {
+    font-size: 5vmin;
+    line-height: 5vmin;
+    border-bottom: 0; }
+  .slide p,
+  .slide li {
+    font-size: 4vmin;
+    line-height: 6vmin;
+    margin-bottom: 0;
+    margin-top: 7vmin;
+    color: #727272; }
+  .slide a {
+    color: #727272;
+    cursor: pointer; }
+  .slide code,
+  .slide code em {
+    font-family: Monaco;
+    color: #3f3f3f; }
+  .slide .not {
+    text-decoration: line-through; }
+  .slide .align-left {
+    text-align: left; }
+  .slide .reference {
+    font-size: 1.3rem; }
 
 .deck-child-current .deck-previous,
 .deck-child-current .deck-before {
@@ -427,20 +432,3 @@ a {
   transform: none;
   position: static;
   padding: 0; }
-
-.slide {
-  -webkit-transform: translate3d(-50%, -50%, 0);
-  transform: translate3d(-50%, -50%, 0);
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  min-height: 0;
-  min-width: 90%;
-  text-align: center; }
-
-.slide .not {
-  text-decoration: line-through; }
-.slide .align-left {
-  text-align: left; }
-.slide .reference {
-  font-size: 1.3rem; }

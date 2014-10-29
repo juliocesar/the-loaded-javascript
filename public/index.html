@@ -6,98 +6,141 @@
     <meta content='yes' name='apple-mobile-web-app-capable'>
     <meta content='black' name='apple-mobile-web-app-status-bar-style'>
     <link href='/stylesheets/the-loaded-javascript.css' rel='stylesheet'>
-    <link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro' rel='stylesheet'>
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet'>
     <script src='/javascript/modernizr.custom.js'></script>
   </head>
   <body>
     <div class="slide">
       <h1>
-        Stylistic
-        <span class='amp'>&</span>
-        logic modularity
+        The loaded JavaScript
+      </h1>
+    </div>
+    <div class="slide">
+      <h1>
+        Quick intro
       </h1>
       <p>
-        in modern web apps
+        I’m <a href="https://twitter.com/julio_ody">@julio_ody</a>
+      </p>
+      <p>
+        Developer / designer / writer / consultant
       </p>
     </div>
     <div class="slide">
       <p>
-        ‟Complete separation between parts of the UI, looks and functionality-wise.
-        And each still works on it's own.”
+        Some base info:
       </p>
       <p>
-        — Me
+        Scripts are loaded two at a time.
+      </p>
+      <p>
+        Loading scripts blocks the entire UI from rendering.
+      </p>
+      <p>
+        (Hence loading them at the bottom of the page)
+      </p>
+      <p>
+        (But that only helps you in a page scenario, not an app)
+      </p>
+    </div>
+    <div class="slide">
+      <p>
+        “But there’s gotta be a better way!”
+      </p>
+      <p>
+        … I hear you say
+      </p>
+    </div>
+    <div class="slide">
+      <p>
+        Enter defer/async
+      </p>
+      <p>
+        =
+      </p>
+      <p>
+        <code>&lt;script&gt;</code> tag attributes that modify the way it loads
+      </p>
+    </div>
+    <div class="slide">
+      <p>
+        <code>
+          &lt;script src="…" <em>defer</em>&gt;
+        </code>
+      </p>
+    </div>
+    <div class="slide">
+      <p>
+        <code>defer</code> automates a task which people have been doing since the 90s:
+      </p>
+      <p>
+        <code>$(document).ready(function() { … });</code>
+      </p>
+      <p>
+        It’ll load the JS, but *defer* its execution until the DOM is ready.
+      </p>
+    </div>
+    <div class="slide">
+      <p>
+        <img src="/images/cool-story-bro.jpg">
+      </p>
+    </div>
+    <div class="slide">
+      <p>
+        <code>
+          &lt;script src="…" <em>async</em>&gt;
+        </code>
+      </p>
+    </div>
+    <div class="slide">
+      <p>
+        <code>async</code> is <code>defer</code>’s dumb cousin
+      </p>
+      <p>
+        It’ll fire execution as soon as it's loaded
+      </p>
+      <p>
+        Handy for stuff such as analytics code
+      </p>
+    </div>
+    <div class="slide">
+      <p>
+        “But Julio, does this mean we don’t need no stinking loaders no more?”
       </p>
     </div>
     <div class="slide">
       <h1>
-        Why?
+        No
       </h1>
       <p>
-        Easy to test. Easy to fix. Easy to maintain.
+        As in <em>yes</em>, you still need them
       </p>
     </div>
-    <div class='slide'>
+    <div class="slide">
+      <p>
+        Loading application code requires some smarts
+      </p>
+      <p>
+        Load this and give me the object for the script that was loaded
+      </p>
+      <p>
+        Callbacks, ordering, etc
+      </p>
+    </div>
+    <div class="slide">
+      <p>
+        Demo load times and scenarios
+      </p>
+    </div>
+    <div class="slide">
+      <p>
+        Show support table from caniuse
+      </p>
+    </div>
+    <div class="slide">
       <h1>
-        How? (styles)
+        Gracias!
       </h1>
-      <p>
-        Use a preprocessor. If for no other reason, for this.
-      </p>
-      <p>
-        Minimal set of superclasses with common properties.
-      </p>
-      <p>
-        Each CSS/SASS/Stylus file responsible for a UI module.
-      </p>
-      <p>
-        Cascade as little as you can.
-      </p>
-    </div>
-    <div class='slide'>
-      <h1>
-        How? (logic)
-      </h1>
-      <p>
-        Implied, but write SMALL modules.
-      </p>
-      <p>
-        Tie modules together with a common event bus.
-      </p>
-      <p>
-        Modules use it to broadcast messages interested modules listen to.
-      </p>
-    </div>
-    <div class='slide'>
-      <h1>
-        Ask yourself these:
-      </h1>
-      <p>
-        How easy it is to test my components separately?
-      </p>
-      <p>
-        Do my components error out when ran separately?
-      </p>
-      <p>
-        Do my components look right when rendered individually?
-      </p>
-    </div>
-    <div class='slide'>
-      <p>
-        Refactor until you get the right answers to all 3.
-      </p>
-    </div>
-    <div class='slide'>
-      <h1>
-        Thanks!
-      </h1>
-      <p>
-        My soapbox is at
-        <a href="https://twitter.com/julio_ody">@julio_ody</a>.
-      </p>
-      <p>
-        You could probably hire me.
-      </p>
     </div>
     <script src='/javascript/jquery-1.9.0.min.js'></script>
     <script src='/javascript/deck.core.js'></script>

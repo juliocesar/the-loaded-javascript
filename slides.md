@@ -11,9 +11,9 @@ they're loaded.
 
 (Hence loading them at the bottom of the page)
 
-(But that only helps you in a page scenarion, not an app)
+(But that only helps you in a page scenario, not an app)
 
-* But… there's gotta be a better way!
+* But… there’s gotta be a better way!
 
 * Enter defer/async.
 
