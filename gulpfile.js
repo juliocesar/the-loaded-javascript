@@ -65,7 +65,7 @@ var shell = require('gulp-shell');
 gulp.task('deploy', shell.task([
   'git checkout gh-pages',
   'git checkout master -- public',
-  'cp -r public/* .',
+  'cp -rf public/* .',
   'git commit -am "Deployment"',
   'git push origin gh-pages',
   'git checkout master'
